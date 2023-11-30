@@ -5,12 +5,7 @@ import cors from "cors"
 dotenv.config();
 
 
-app.use(
-    cors({
-        origin:"*",
-        credentials: true
-    })
-)
+
 
 
 import FuelConsumption from './fuel-consumption.js';
@@ -31,6 +26,13 @@ const fuelConsumptionAPI = FuelConsumptionAPI(fuelConsumption)
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+app.use(
+    cors({
+        origin:"*",
+        credentials: true
+    })
+)
 app.use(express.json());
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
