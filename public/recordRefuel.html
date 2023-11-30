@@ -16,6 +16,7 @@
 <body>
         <div id="app" x-data="appData" class="container">
           <h1 class="h3 my-3 text-center">Record Refuel</h1>
+          <p x-text="successRecord" class="text-green text-center my-1"></p>
           <form @submit.prevent="recordRefuel" class="my-5">
             <div class="form-group m-0 my-2">
                 <label for="vehicleId">Vehicle:</label>

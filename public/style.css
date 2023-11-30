@@ -55,3 +55,8 @@ a:hover {
 tr,td{
     border: 1px solid blue;
 }
+.text-green{
+    color: green;
+    font-size: medium;
+    font-weight: 900;
+}

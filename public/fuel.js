@@ -17,6 +17,8 @@ Alpine.data('appData', () => {
             filledUp: false
           },
           error:"",
+          success:"",
+          successRecord:"",
         //create a function to add the vehicle
         addVehicle() {
          //get the vehicles endpoint
@@ -27,6 +29,13 @@ Alpine.data('appData', () => {
                     this.error = response.data.message
                     setTimeout(()=>{
                         this.error =""
+                    },3000)
+                }
+                if(response.data.status==='success'){
+                    
+                    this.success = "Car Successfully Added"
+                    setTimeout(()=>{
+                        this.success =""
                     },3000)
                 }
                 
@@ -41,11 +50,15 @@ Alpine.data('appData', () => {
           },
           //create a function to record the fuel
           recordRefuel() {
-            console.log(this.refuelData)
             //get the record fuel endpoint
             axios.post('http://localhost:3000/api/refuel', this.refuelData)
               .then(response => {
-                console.log(response.data);
+                if(response.data.status==='success'){
+                    this.successRecord = "Record Added"
+                    setTimeout(()=>{
+                        this.successRecord =""
+                    },3000)
+                }
 
                 // Clear the form fields
                 this.refuelData.vehicleId = '';

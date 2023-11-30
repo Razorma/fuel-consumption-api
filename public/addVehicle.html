@@ -17,6 +17,7 @@
     <main id="app" x-data="appData" class="container">
         <h1 class="h2 text-center">Add New Vehicle</h1>
         <form @submit.prevent="addVehicle">
+            <p x-text="success" class="text-green text-center my-1"></p>
             <p x-text="error" class="text-danger text-center my-5"></p>
             <div class="form-group m-0 mt-2">
                 <label for="description" class="h5">Description:</label>
