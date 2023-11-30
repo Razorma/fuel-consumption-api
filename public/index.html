@@ -20,18 +20,32 @@
         <h1 class="h2 text-center my-2">Fuel consumption API</h1>
         <h3 class="my-3 text-center">Vehicles</h3>
         <!-- d-flex container-fluid  -->
-        <ul class="car-container p-0 ">
-          <template x-for="vehicle in vehicles" :key="vehicle.id" >
-            <li class="mt-3 car-list">
-                <span class="car-list-span"><strong>Description:</strong> <span x-text="vehicle.description"></span></span>
-                <span class="car-list-span"><strong>Registration Number:</strong> <span x-text="vehicle.reg_number"></span></span>
-                <span class="car-list-span"><strong>Total Liters:</strong> <span x-text="vehicle.total_liters || empty.toFixed(2)"></span></span>
-                <span class="car-list-span"><strong>Total Amount Spent:</strong> <span x-text="vehicle.total_amount || empty.toFixed(2)"></span></span>
-                <span class="car-list-span"><strong>Total Distance:</strong> <span x-text="vehicle.total_distance || empty.toFixed(2)"></span></span>
-                <span class="car-list-span"><strong>Fuel Consumption:</strong> <span x-text="vehicle.fuel_consumption || empty.toFixed(2)"></span></span>
-            </li>
-          </template>
-        </ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description:</th>
+                    <th>Registration Number:</th>
+                    <th>Total Liters:</th>
+                    <th>Total Amount Spent:</th>
+                    <th>Total Distance:</th>
+                    <th>Fuel Consumption:</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <template x-for="vehicle in vehicles" :key="vehicle.id" >
+                <tr>
+                    <td  x-text="vehicle.description"></td>
+                    <td  x-text="vehicle.reg_number"></td>
+                    <td x-text="vehicle.total_liters || empty.toFixed(2)"></td>
+                    <td x-text="vehicle.total_amount || empty.toFixed(2)"></td>
+                    <td x-text="vehicle.total_distance || empty.toFixed(2)"></td>
+                    <td x-text="vehicle.fuel_consumption || empty.toFixed(2)"></td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+      
         <div class="my-5 container-fluid d-flex justify-content-between">
             <a href="addVehicle.html">Add VEHICLE</a>
             <a href="recordRefuel.html">REFUEL</a>

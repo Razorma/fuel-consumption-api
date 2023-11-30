@@ -19,9 +19,9 @@ ul>li{
 .car-list{
     display: flex;
     flex-direction: column;
-    width: 300px;
-    background-color: #F7D6E0;
-    padding: 5px;
+    max-width: 300px;
+    /* background-color: #F7D6E0; */
+    /* padding: 5px; */
 }
 .car-list-span{
     display: flex;
@@ -51,4 +51,7 @@ a {
 a:hover {
     background-color: #3498db;
     color: #fff;
+}
+tr,td{
+    border: 1px solid blue;
 }

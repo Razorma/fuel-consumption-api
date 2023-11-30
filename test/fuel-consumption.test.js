@@ -8,7 +8,7 @@ const pgp = pgPromise();
 
 
 const config = { 
-	connectionString : process.env.DATABASE_URL_TEST || 'postgres://tmhlcsdj:cAwwIycS84YGvfQl1c6_FlxCKB6J2pKD@flora.db.elephantsql.com/tmhlcsdj'
+	connectionString : process.env.DATABASE_URL_TEST 
 }
 
 if (process.env.NODE_ENV == 'production') {
