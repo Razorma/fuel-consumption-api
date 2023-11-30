@@ -1,7 +1,17 @@
 import pgPromise from 'pg-promise';
 import express from 'express';
 import dotenv from 'dotenv'
+import cors from "cors"
 dotenv.config();
+
+
+app.use(
+    cors({
+        origin:"*",
+        credentials: true
+    })
+)
+
 
 import FuelConsumption from './fuel-consumption.js';
 import FuelConsumptionAPI from './fuel-consumption-api.js';
