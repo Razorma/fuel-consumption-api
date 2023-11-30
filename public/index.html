@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Consumption</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/637f4ab425.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+
+<body>
+    <main id="app" x-data="appData" class="container">
+        <h1 class="h2 text-center my-2">Fuel consumption API</h1>
+        <h3 class="my-3 text-center">Vehicles</h3>
+        <!-- d-flex container-fluid  -->
+        <ul class="car-container p-0 ">
+          <template x-for="vehicle in vehicles" :key="vehicle.id" >
+            <li class="mt-3 car-list">
+                <span class="car-list-span"><strong>Description:</strong> <span x-text="vehicle.description"></span></span>
+                <span class="car-list-span"><strong>Registration Number:</strong> <span x-text="vehicle.reg_number"></span></span>
+                <span class="car-list-span"><strong>Total Liters:</strong> <span x-text="vehicle.total_liters || empty.toFixed(2)"></span></span>
+                <span class="car-list-span"><strong>Total Amount Spent:</strong> <span x-text="vehicle.total_amount || empty.toFixed(2)"></span></span>
+                <span class="car-list-span"><strong>Total Distance:</strong> <span x-text="vehicle.total_distance || empty.toFixed(2)"></span></span>
+                <span class="car-list-span"><strong>Fuel Consumption:</strong> <span x-text="vehicle.fuel_consumption || empty.toFixed(2)"></span></span>
+            </li>
+          </template>
+        </ul>
+        <div class="my-5 container-fluid d-flex justify-content-between">
+            <a href="addVehicle.html">Add VEHICLE</a>
+            <a href="recordRefuel.html">REFUEL</a>
+        </div>
+    </main>
+</body>
+<script src="fuel.js"></script>
+</html>

@@ -22,11 +22,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
 
 app.get('/api/vehicles', fuelConsumptionAPI.vehicles);
 app.get('/api/vehicle', fuelConsumptionAPI.vehicle);
 app.post('/api/vehicle', fuelConsumptionAPI.addVehicle);
 app.post('/api/refuel', fuelConsumptionAPI.refuel);
 
-app.listen(PORT, () => console.log(`App started on port: ${PORT}`));
+app.listen(PORT, () => console.log(`App listening on localhost:${PORT}`));
 

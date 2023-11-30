@@ -10,8 +10,8 @@ POST http://localhost:3000/api/vehicle HTTP/1.1
 content-type: application/json
 
 {
-    "description": "sample vehicle",
-    "regNumber": "CAA 780-123"
+    "description": "Blue Honda",
+    "regNumber": "CAA 540-123"
 }
 
 ###

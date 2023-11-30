@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vehicles</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/637f4ab425.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <main id="app" x-data="appData" class="container">
+        <h1 class="h2 text-center">Add New Vehicle</h1>
+        <form @submit.prevent="addVehicle">
+            <p x-text="error" class="text-danger text-center my-5"></p>
+            <div class="form-group m-0 mt-2">
+                <label for="description" class="h5">Description:</label>
+                <input type="text" id="description" class="form-control" x-model="newVehicle.description" required><br>
+            </div>
+            <div class="form-group m-0 mt-2">
+                
+                <label for="regNumber" class="h5">Registration Number:</label>
+                <input type="text" id="regNumber" class="form-control" x-model="newVehicle.regNumber" required><br>
+            </div>
+          <button type="submit" >Add Vehicle</button>
+        </form>
+        <div class="mt-5 container-fluid d-flex justify-content-between">
+            <a href="index.html">RETURN HOME</a>
+            <a href="recordRefuel.html">REFUEL</a>
+        </div>
+    </main>
+</body>
+<script src="fuel.js"></script>
+</html>
